@@ -1,6 +1,6 @@
 package Reflexive::Role::Collective;
 BEGIN {
-  $Reflexive::Role::Collective::VERSION = '1.103480';
+  $Reflexive::Role::Collective::VERSION = '1.110100';
 }
 
 #ABSTRACT: Provides a composable behavior for containers watching contained events
@@ -131,7 +131,7 @@ Reflexive::Role::Collective - Provides a composable behavior for containers watc
 
 =head1 VERSION
 
-version 1.103480
+version 1.110100
 
 =head1 DESCRIPTION
 

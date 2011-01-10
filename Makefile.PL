@@ -32,7 +32,7 @@ my %WriteMakefileArgs = (
     'Reflex::Callbacks' => '0',
     'Reflex::Role' => '0'
   },
-  'VERSION' => '1.103480',
+  'VERSION' => '1.110100',
   'test' => {
     'TESTS' => 't/*.t'
   }
