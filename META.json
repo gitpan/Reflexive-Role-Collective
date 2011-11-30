@@ -4,7 +4,7 @@
       "Nicholas R. Perez <nperez@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.102341, CPAN::Meta::Converter version 2.102400",
+   "generated_by" : "Dist::Zilla version 4.300003, CPAN::Meta::Converter version 2.112150",
    "license" : [
       "perl_5"
    ],
@@ -16,7 +16,7 @@
    "prereqs" : {
       "configure" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : "6.31"
+            "ExtUtils::MakeMaker" : "6.30"
          }
       },
       "runtime" : {
@@ -32,9 +32,11 @@
       "test" : {
          "requires" : {
             "Moose" : 0,
-            "Reflex::Base" : 0,
             "Reflex::Role::Collectible" : 0,
-            "Test::More" : 0
+            "Reflex::Role::Reactive" : 0,
+            "Test::More" : 0,
+            "strict" : 0,
+            "warnings" : 0
          }
       }
    },
@@ -45,6 +47,6 @@
          "url" : "git://nickandperla.net/reflexive-role-collective.git"
       }
    },
-   "version" : "1.110100"
+   "version" : "1.113340"
 }
 

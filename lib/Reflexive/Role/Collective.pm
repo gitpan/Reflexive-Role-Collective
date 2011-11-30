@@ -1,6 +1,6 @@
 package Reflexive::Role::Collective;
-BEGIN {
-  $Reflexive::Role::Collective::VERSION = '1.110100';
+{
+  $Reflexive::Role::Collective::VERSION = '1.113340';
 }
 
 #ABSTRACT: Provides a composable behavior for containers watching contained events
@@ -9,7 +9,6 @@ use MooseX::Params::Validate;
 use Moose::Util::TypeConstraints;
 use MooseX::Types::Moose(':all');
 use MooseX::Types::Structured(':all');
-use Reflex::Callbacks qw(cb_method);
 
 
 attribute_parameter collection => 'objects';
@@ -59,14 +58,20 @@ parameter watched_events =>
 role
 {
     my $p = shift;
+    use Reflex::Callbacks qw(cb_method);
     
     foreach my $tuple (@{$p->watched_events})
     {
         if(ref($tuple->[1]) eq 'ARRAY')
         {
-            method_emit @{$tuple->[1]}
+            my ($method_name, $event_name) = @{$tuple->[1]};
+            method $method_name => sub {
+                my ($self, $event) = @_;
+                $self->re_emit($event, -name => $event_name);
+            };
         }
     }
+
 
 
 
@@ -131,7 +136,7 @@ Reflexive::Role::Collective - Provides a composable behavior for containers watc
 
 =head1 VERSION
 
-version 1.110100
+version 1.113340
 
 =head1 DESCRIPTION
 
@@ -263,7 +268,7 @@ Nicholas R. Perez <nperez@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Nicholas R. Perez <nperez@cpan.org>.
+This software is copyright (c) 2011 by Nicholas R. Perez <nperez@cpan.org>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

@@ -1,4 +1,7 @@
-Revision history for Reflexive-Role-Collective: 1.110100
+Revision history for Reflexive-Role-Collective: 1.113340
+
+1.113340  2011-11-30 20:59:02 Europe/Amsterdam
+        Rework re-emitting and track changes to current Reflex version
 
 1.110100  2011-01-10 13:59:05 America/Chicago
         Update tests to use the new Reflex::Sender API

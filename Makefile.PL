@@ -4,37 +4,39 @@ use warnings;
 
 
 
-use ExtUtils::MakeMaker 6.31;
+use ExtUtils::MakeMaker 6.30;
 
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'Provides a composable behavior for containers watching contained events',
-  'AUTHOR' => 'Nicholas R. Perez <nperez@cpan.org>',
-  'BUILD_REQUIRES' => {
-    'Moose' => '0',
-    'Reflex::Base' => '0',
-    'Reflex::Role::Collectible' => '0',
-    'Test::More' => '0'
+  "ABSTRACT" => "Provides a composable behavior for containers watching contained events",
+  "AUTHOR" => "Nicholas R. Perez <nperez\@cpan.org>",
+  "BUILD_REQUIRES" => {
+    "Moose" => 0,
+    "Reflex::Role::Collectible" => 0,
+    "Reflex::Role::Reactive" => 0,
+    "Test::More" => 0,
+    "strict" => 0,
+    "warnings" => 0
   },
-  'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.31'
+  "CONFIGURE_REQUIRES" => {
+    "ExtUtils::MakeMaker" => "6.30"
   },
-  'DISTNAME' => 'Reflexive-Role-Collective',
-  'EXE_FILES' => [],
-  'LICENSE' => 'perl',
-  'NAME' => 'Reflexive::Role::Collective',
-  'PREREQ_PM' => {
-    'Moose::Util::TypeConstraints' => '0',
-    'MooseX::Params::Validate' => '0',
-    'MooseX::Types::Moose' => '0',
-    'MooseX::Types::Structured' => '0',
-    'Reflex::Callbacks' => '0',
-    'Reflex::Role' => '0'
+  "DISTNAME" => "Reflexive-Role-Collective",
+  "EXE_FILES" => [],
+  "LICENSE" => "perl",
+  "NAME" => "Reflexive::Role::Collective",
+  "PREREQ_PM" => {
+    "Moose::Util::TypeConstraints" => 0,
+    "MooseX::Params::Validate" => 0,
+    "MooseX::Types::Moose" => 0,
+    "MooseX::Types::Structured" => 0,
+    "Reflex::Callbacks" => 0,
+    "Reflex::Role" => 0
   },
-  'VERSION' => '1.110100',
-  'test' => {
-    'TESTS' => 't/*.t'
+  "VERSION" => "1.113340",
+  "test" => {
+    "TESTS" => "t/*.t"
   }
 );
 
